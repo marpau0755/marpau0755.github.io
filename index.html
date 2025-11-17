@@ -5,72 +5,110 @@
   <title>Mark A. Paul – Technology Leader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --soft-blue: #b2d6f2;
+      --soft-teal: #9fd5c9;
+      --soft-green: #c4e7ce;
+      --text-dark: #1f2b38;
+      --accent-dark: #3a6d8c;
+      --page-bg: #f7fbff;
+    }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f6f6f6;
-      color: #222;
+      background: var(--page-bg);
+      color: var(--text-dark);
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #ff6b35, #faae43);
-      color: #fff;
+      background: linear-gradient(135deg, var(--soft-blue), var(--soft-teal));
+      color: var(--text-dark);
       padding: 3rem 1.5rem;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
     }
-    header h1 {
+    .hero-content h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
     }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.1rem;
+    .hero-headshot img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.65);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    @media (min-width: 700px) {
+      .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
     }
     main {
       max-width: 900px;
       margin: -3rem auto 3rem;
       padding: 2rem;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      box-shadow: 0 18px 35px rgba(58, 109, 140, 0.16);
     }
     h2 {
       margin-top: 2.5rem;
-      color: #ff6b35;
+      color: var(--accent-dark);
     }
-    .contact-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
     .card {
-      background: #fdf4ed;
-      border-radius: 10px;
+      background: var(--soft-green);
+      border-radius: 12px;
       padding: 1rem 1.25rem;
-      border-left: 4px solid #ff6b35;
+      border-left: 4px solid var(--soft-teal);
     }
     ul {
       padding-left: 1.2rem;
+      margin: 0.5rem 0 0;
     }
     a {
-      color: #ff6b35;
+      color: var(--accent-dark);
       text-decoration: none;
       font-weight: 600;
+    }
+    a:hover {
+      color: #1c4b65;
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #777;
+      color: #5f7384;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mark A. Paul</h1>
-    <p>Technology Leader • AI Testing Specialist • Founder of DriveLogs LLC</p>
+    <div class="hero-content">
+      <div>
+        <h1>Mark A. Paul</h1>
+        <p>Technology Leader • AI Testing Specialist • Founder of DriveLogs LLC</p>
+      </div>
+      <div class="hero-headshot">
+        <img src="assets/images/profileImage.jpg" alt="Photo of Mark A. Paul" />
+      </div>
+    </div>
   </header>
 
   <main>
@@ -86,9 +124,9 @@
 
     <section>
       <h2>What I Do</h2>
-      <div class="contact-grid">
+      <div class="grid">
         <div class="card">
-          <strong>Automation & AI Testing</strong>
+          <strong>Automation &amp; AI Testing</strong>
           <p>Designing frameworks that integrate directly into CI/CD pipelines to test AI systems and reduce risk.</p>
         </div>
         <div class="card">
@@ -96,7 +134,7 @@
           <p>Building delightful iOS/Android experiences like <em>Dinner Roll</em> that help users decide what’s for dinner.</p>
         </div>
         <div class="card">
-          <strong>Leadership & Mentorship</strong>
+          <strong>Leadership &amp; Mentorship</strong>
           <p>Guiding multidisciplinary teams, championing QA culture, and mentoring engineers to do their best work.</p>
         </div>
       </div>
@@ -115,7 +153,7 @@
       <ul>
         <li><strong>InteliChart</strong> – Sr. QA Automation Engineer (2022–Present): led automation initiatives that improved coverage and accelerated delivery.</li>
         <li><strong>Veracity Consulting Group</strong> – Software Engineer: built modern Selenium/C# frameworks and mentored QA teams.</li>
-        <li><strong>Robert Half & Virginia Credit Union</strong> – Senior Quality Engineer roles focused on large-scale app QA, defect management, Jenkins automation, and customer satisfaction.</li>
+        <li><strong>Robert Half &amp; Virginia Credit Union</strong> – Senior Quality Engineer roles focused on large-scale app QA, defect management, Jenkins automation, and customer satisfaction.</li>
       </ul>
       <p>
         Earlier roles at Insight Global, Celerity, and Web Tech Fusion established a foundation in test strategy, ALM, and data-driven QA leadership.
@@ -123,7 +161,7 @@
     </section>
 
     <section>
-      <h2>Education & Certifications</h2>
+      <h2>Education &amp; Certifications</h2>
       <ul>
         <li>BS in Information Technology – ECPI University</li>
         <li>Lean Six Sigma White Belt, Lean Expert, Value Stream Mapping Expert</li>
@@ -133,7 +171,7 @@
 
     <section>
       <h2>Contact</h2>
-      <div class="contact-grid">
+      <div class="grid">
         <div class="card">
           <strong>Email</strong><br />
           <a href="mailto:markpaul981@gmail.com">markpaul981@gmail.com</a>
@@ -150,11 +188,37 @@
     </section>
 
     <section>
-      <h2>Resources</h2>
-      <ul>
-        <li><a href="https://marpau0755.github.io/dinnerroll-privacy/">Dinner Roll Privacy Policy</a></li>
-        <li><a href="mailto:dinnerroll.contact@gmail.com">Dinner Roll Support</a></li>
-      </ul>
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>DriveLogs LLC</strong>
+          <p>Fleet-safe logging and automation tools for transportation teams.</p>
+          <ul>
+            <li><a href="https://www.drivelogsusa.com/" target="_blank" rel="noopener">Website</a></li>
+            <li><a href="https://www.drivelogsusa.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://www.drivelogsusa.com/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Dinner Roll</strong>
+          <p>Mobile app that curates recipes and restaurant suggestions.</p>
+          <ul>
+            <li><a href="https://marpau0755.github.io/dinnerroll-privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="mailto:dinnerroll.contact@gmail.com">Support Email</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>CoFinance</strong>
+          <p>Collaborative budgeting platform for households and teams.</p>
+          <ul>
+            <li><a href="https://marpau0755.github.io/cofinance-privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://marpau0755.github.io/cofinance-privacy/support.html" target="_blank" rel="noopener">Support</a></li>
+            <li><a href="https://marpau0755.github.io/cofinance-privacy/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 
