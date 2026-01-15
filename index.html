@@ -23,7 +23,7 @@
     <section>
       <h2>About Me</h2>
       <p>
-        Dynamic technology leader with 15+ years of experience building resilient QA and automation programs
+        Dynamic technology leader with <span id="years-experience">15+</span> years of experience building resilient QA and automation programs
         for mission-critical software. My work spans mobile app development, AI testing, and the safe deployment
         of large language models. I love architecting automation frameworks that dramatically cut release times,
         improve quality metrics, and delight end-users.
@@ -147,7 +147,25 @@
   </main>
 
   <footer>
-    © 2026 Mark A. Paul · Richmond, Virginia · All rights reserved.
+    © <span id="copyright-year">2026</span> Mark A. Paul · Richmond, Virginia · All rights reserved.
   </footer>
+  <script>
+    // Calculate years of experience from 2014
+    (function() {
+      const startYear = 2010;
+      const currentYear = new Date().getFullYear();
+      const yearsOfExperience = currentYear - startYear;
+      const experienceElement = document.getElementById('years-experience');
+      if (experienceElement) {
+        experienceElement.textContent = yearsOfExperience + '+';
+      }
+      
+      // Update copyright year
+      const copyrightElement = document.getElementById('copyright-year');
+      if (copyrightElement) {
+        copyrightElement.textContent = currentYear;
+      }
+    })();
+  </script>
 </body>
 </html>
