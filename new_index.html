@@ -49,18 +49,73 @@
     </section>
 
     <section>
-      <h2>Selected Projects</h2>
+      <h2>Current Venture</h2>
+      <p>
+        <strong>DriveLogs LLC</strong> – Founder<br />
+        Pioneering automation solutions that bring AI reliability, auditability, and speed to enterprises.
+      </p>
+    </section>
+
+    <section>
+      <h2>Highlighted Experience</h2>
+      <ul>
+        <li><strong>InteliChart</strong> – Lead QA Automation Coordinator (2022–Present): led automation initiatives that improved coverage and accelerated delivery.</li>
+        <li><strong>Veracity Consulting Group</strong> – Software Engineer: built modern Selenium/C# frameworks and mentored QA teams.</li>
+        <li><strong>Robert Half &amp; Virginia Credit Union</strong> – Senior Quality Engineer roles focused on large-scale app QA, defect management, Jenkins automation, and customer satisfaction.</li>
+      </ul>
+      <p>
+        Earlier roles at Insight Global, Celerity, and Web Tech Fusion established a foundation in test strategy, ALM, and data-driven QA leadership.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education &amp; Certifications</h2>
+      <ul>
+        <li>BS in Information Technology – ECPI University</li>
+        <li>Lean Six Sigma White Belt, Lean Expert, Value Stream Mapping Expert</li>
+        <li>AIGPE™ Six Sigma Professional, The Complete Python Bootcamp</li>
+      </ul>
+      <div class="cert-seals">
+        <img src="assets/images/white_belt.png" alt="AIGPE Certified White Belt" title="White Belt" />
+        <img src="assets/images/yellow_belt.png" alt="AIGPE Certified Yellow Belt" title="Yellow Belt" />
+        <img src="assets/images/green_belt.png" alt="AIGPE Certified Green Belt" title="Green Belt" />
+        <img src="assets/images/black_belt.png" alt="AIGPE Certified Black Belt" title="Black Belt" />
+        <img src="assets/images/seven_tools.png" alt="Seven Basic Tools of Quality Expert" title="Seven Basic Tools" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Email</strong><br />
+          <a href="mailto:markpaul981@gmail.com">markpaul981@gmail.com</a>
+        </div>
+        <div class="card">
+          <strong>Phone</strong><br />
+          <a href="tel:+18042169161">804-216-9161</a>
+        </div>
+        <div class="card">
+          <strong>LinkedIn</strong><br />
+          <a href="https://www.linkedin.com/in/mark-paul-csm" target="_blank" rel="noopener">linkedin.com/in/mark-paul-csm</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
       <div class="grid">
         <div class="project-card card-drivelogs">
           <div class="card-header">
             <img src="assets/images/logos/drivelogs.png" alt="DriveLogs Logo" class="project-logo" />
-            <strong>DriveLogs</strong>
+            <strong>DriveLogs LLC</strong>
           </div>
           <div class="card-body">
-            <p>A B2B SaaS platform for commercial fleets to automate trip logging, fuel tracking, and compliance.</p>
+            <p>Track your driving hours with GPS accuracy, certify parent drives, and meet DMV requirements. Includes free permit practice exams covering signals, road signs, and driving safety—trusted by students nationwide.</p>
             <ul>
-              <li><a href="https://drivelogs.app" target="_blank" rel="noopener">Website</a></li>
-              <li><a href="https://marpau0755.github.io/drivelogs-privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+              <li><a href="https://www.drivelogsusa.com/" target="_blank" rel="noopener">Website</a></li>
+              <li><a href="https://www.drivelogsusa.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+              <li><a href="https://www.drivelogsusa.com/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a></li>
             </ul>
           </div>
         </div>
@@ -178,11 +233,28 @@
   </main>
 
   <footer>
-    &copy; <span id="copyright-year">2026</span> Mark A. Paul &bull; Richmond, Virginia &bull; All rights reserved.
+    © <span id="copyright-year">2026</span> Mark A. Paul · Richmond, Virginia · All rights reserved.
   </footer>
   <script>
+    // Calculate years of experience from 2014
     (function() {
-      // Calculate years of experience from 2010
+      const startYear = 2010;
+      const currentYear = new Date().getFullYear();
+      const yearsOfExperience = currentYear - startYear;
+      const experienceElement = document.getElementById('years-experience');
+      if (experienceElement) {
+        experienceElement.textContent = yearsOfExperience + '+';
+      }
+      
+    </section>
+  </main>
+
+  <footer>
+    © <span id="copyright-year">2026</span> Mark A. Paul · Richmond, Virginia · All rights reserved.
+  </footer>
+  <script>
+    // Calculate years of experience from 2014
+    (function() {
       const startYear = 2010;
       const currentYear = new Date().getFullYear();
       const yearsOfExperience = currentYear - startYear;
@@ -196,6 +268,8 @@
       if (copyrightElement) {
         copyrightElement.textContent = currentYear;
       }
+    })();
+  </script>
 
       // Progressive scroll animation for header split
       const heroText = document.getElementById('hero-text');
@@ -203,7 +277,7 @@
 
       if (heroText && heroPic) {
         window.addEventListener('scroll', () => {
-          if (window.innerWidth > 900) {
+          if (window.innerWidth > 1050) {
             const scrollY = window.scrollY;
             // Calculate max shift to keep them just inside the screen edges
             const maxShift = Math.max(0, (window.innerWidth - 900) / 2 - 40);
@@ -216,6 +290,9 @@
             
             heroText.style.transform = `translateX(-${shift}px) scale(${scale})`;
             heroPic.style.transform = `translateX(${shift}px) scale(${scale})`;
+            
+            // Adjust opacity if they need to fade slightly at the edges, but user wants them visible
+            // We can leave opacity alone.
           } else {
             // Reset on smaller screens
             heroText.style.transform = `none`;

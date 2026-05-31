@@ -17,9 +17,13 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, var(--soft-blue), var(--soft-teal));
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  transition: all 0.4s ease;
+  background: linear-gradient(rgba(247, 251, 255, 0.85), rgba(247, 251, 255, 0.85)), url('../assets/images/header_bg.jpg') center/cover no-repeat;
   color: var(--text-dark);
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 
 .hero-content {
@@ -30,16 +34,50 @@ header {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  transition: all 0.4s ease;
 }
 
 .hero-content h1 {
   margin: 0;
   font-size: 2.6rem;
+  transition: all 0.4s ease;
+}
+
+/* Sticky Header Scrolled State */
+header.header-scrolled {
+  padding: 0.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: linear-gradient(rgba(247, 251, 255, 0.98), rgba(247, 251, 255, 0.98)), url('../assets/images/header_bg.jpg') center/cover no-repeat;
+}
+
+header.header-scrolled .hero-content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  gap: 0;
+  text-align: left;
+}
+
+header.header-scrolled .hero-content h1 {
+  font-size: 1.4rem;
+}
+
+header.header-scrolled .hero-content p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+header.header-scrolled .hero-headshot img {
+  width: 60px;
+  height: 60px;
+  border-width: 2px;
 }
 
 .hero-content p {
   margin: 0.5rem 0 0;
   font-size: 1.1rem;
+  transition: all 0.4s ease;
 }
 
 .hero-headshot img {
@@ -49,6 +87,7 @@ header {
   object-fit: cover;
   border: 4px solid rgba(255,255,255,0.65);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
 }
 
 @media (min-width: 700px) {
@@ -65,7 +104,9 @@ main {
   padding: 2rem;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 18px 35px rgba(58, 109, 140, 0.16);
+  box-shadow: 0 20px 40px -10px rgba(58, 109, 140, 0.15);
+  position: relative;
+  z-index: 10;
 }
 
 h2 {
@@ -87,6 +128,59 @@ h2 {
   border-left: 4px solid var(--soft-teal);
 }
 
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.card-header strong {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.project-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-drivelogs .card-header { background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('../assets/images/logos/drivelogs.png') center/cover no-repeat; }
+.card-dinnerroll .card-header { background: linear-gradient(rgba(230, 126, 34, 0.85), rgba(230, 126, 34, 0.85)), url('../assets/images/logos/dinnerroll.png') center/cover no-repeat; }
+.card-cofinance .card-header { background: linear-gradient(rgba(22, 84, 99, 0.85), rgba(22, 84, 99, 0.85)), url('../assets/images/logos/cofinance.png') center/cover no-repeat; }
+.card-tophundred .card-header { background: linear-gradient(rgba(0, 56, 230, 0.85), rgba(0, 56, 230, 0.85)), url('../assets/images/logos/tophundred.jpg') center/cover no-repeat; }
+.card-dailyscramble .card-header { background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('../assets/images/logos/dailyscramble.png') center/cover no-repeat; }
+.card-worldofjokesai .card-header { background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../assets/images/logos/worldofjokesai.png') center/cover no-repeat; }
+.card-eleganceva .card-header { background: linear-gradient(rgba(253, 121, 168, 0.85), rgba(253, 121, 168, 0.85)), url('../assets/images/elegance_bg.jpg') center/cover no-repeat; }
+.card-crossholdem .card-header { background: linear-gradient(rgba(139, 0, 0, 0.85), rgba(139, 0, 0, 0.85)), url('../assets/images/logos/crossholdem.png') center/cover no-repeat; }
+.card-theepiccapsule .card-header { background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(26, 35, 126, 0.85)), url('../assets/images/epiccapsule_bg.png') center/cover no-repeat; }
+
 ul {
   padding-left: 1.2rem;
   margin: 0.5rem 0 0;
@@ -107,4 +201,24 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #5f7384;
+}
+
+.cert-seals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.cert-seals img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.cert-seals img:hover {
+  transform: translateY(-5px) scale(1.05);
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
 }
